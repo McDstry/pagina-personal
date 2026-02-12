@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+}
+
+/* NAVBAR */
+header {
+    position: sticky;
+    top: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.navbar {
+    width: 90%;
+    margin: auto;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+.logo:visited,
+.logo:hover,
+.logo:active {
+    color: #ffffff;
+}
+
+
+
+/* LINKS */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #00f2fe;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* HERO */
+#inicio {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#inicio h2 {
+    font-size: 3rem;
+}
+
+#inicio p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* SECTIONS */
+.section {
+    padding: 80px 20px;
+}
+
+/* CARDS */
+#proyectos {
+    text-align: center;
+}
+
+.cards {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: rgba(255,255,255,0.08);
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* CONTACT */
+#contacto p {
+    margin-top: 10px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.7;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    #inicio h2 {
+        font-size: 2.2rem;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+}
+/* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 600px) {
+
+    /* NAVBAR */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* HERO */
+    #inicio h2 {
+        font-size: 1.8rem;
+    }
+
+    #inicio p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* SECTIONS */
+    .section {
+        padding: 60px 15px;
+    }
+
+    /* CARDS */
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* PROFILE IMAGE */
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+}
+/* MENU HAMBURGUESA */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* MOBILE MENU */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+        color: #fff;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(0,0,0,0.9);
+        padding: 20px 0;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+/* ANIMACIONES */
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
